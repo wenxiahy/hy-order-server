@@ -1,5 +1,6 @@
 package com.wenxiahy.hy.order.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
@@ -27,6 +28,7 @@ public class OrderDto implements Serializable {
     @JsonProperty("store_name")
     private String storeName;
 
+    @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss")
     @JsonProperty("order_time")
     private Date orderTime;
 

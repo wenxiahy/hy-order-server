@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
  */
 public class GetOrderRequest extends BaseRequest {
 
-    @NotNull
+    @NotNull(message = "order_no不能为空")
     @JsonProperty("order_no")
     private Long orderNo;
 

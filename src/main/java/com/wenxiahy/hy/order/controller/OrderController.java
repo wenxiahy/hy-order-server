@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
+import java.util.Date;
 
 /**
  * @Author zhouw
@@ -56,6 +57,7 @@ public class OrderController extends BaseController {
             dto.setOrderStatus(11);
             dto.setStoreCode("WH019");
             dto.setStoreName("武汉街道口019店");
+            dto.setOrderTime(new Date());
 
             boolean redisRst = orderRedisService.set(key, dto);
             if (!redisRst) {
