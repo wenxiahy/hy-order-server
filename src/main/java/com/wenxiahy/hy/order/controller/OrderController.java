@@ -67,4 +67,9 @@ public class OrderController extends BaseController {
 
         return ok(dto);
     }
+
+    @GetMapping("/count/{db}")
+    public long count(@PathVariable("db") String db) {
+        return orderService.count(db);
+    }
 }

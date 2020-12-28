@@ -15,4 +15,12 @@ public interface IOrderService {
      * @return
      */
     Object getOrderByOrderNo(long userId, long orderNo);
+
+    /**
+     * 测试多数据源
+     *
+     * @param db
+     * @return
+     */
+    long count(String db);
 }

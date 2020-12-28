@@ -70,6 +70,11 @@
             <artifactId>hy-starter-redis</artifactId>
             <version>1.0.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.wenxiahy</groupId>
+            <artifactId>hy-starter-mybatis</artifactId>
+            <version>1.0.2</version>
+        </dependency>
     </dependencies>
 
     <repositories>
