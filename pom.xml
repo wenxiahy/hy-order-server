@@ -80,7 +80,7 @@
     <repositories>
         <repository>
             <id>wenxiahy.com</id>
-            <url>http://47.75.199.218:8081/repository/maven-public</url>
+            <url>http://localhost:8081/repository/maven-public</url>
         </repository>
     </repositories>
 
