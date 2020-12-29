@@ -1,5 +1,7 @@
 package com.wenxiahy.hy.order.service;
 
+import com.wenxiahy.hy.data.order.Order;
+
 /**
  * @Author zhouw
  * @Description
@@ -14,7 +16,7 @@ public interface IOrderService {
      * @param orderNo
      * @return
      */
-    Object getOrderByOrderNo(long userId, long orderNo);
+    Order getOrderByOrderNo(long userId, long orderNo);
 
     /**
      * 测试多数据源

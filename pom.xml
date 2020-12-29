@@ -67,6 +67,11 @@
         </dependency>
         <dependency>
             <groupId>com.wenxiahy</groupId>
+            <artifactId>hy-data</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.wenxiahy</groupId>
             <artifactId>hy-starter-redis</artifactId>
             <version>1.0.1</version>
         </dependency>

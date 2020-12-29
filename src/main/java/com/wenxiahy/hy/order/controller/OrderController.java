@@ -3,6 +3,7 @@ package com.wenxiahy.hy.order.controller;
 import com.wenxiahy.hy.common.bean.auth.AuthenticationUser;
 import com.wenxiahy.hy.common.support.BaseController;
 import com.wenxiahy.hy.common.support.HyResponse;
+import com.wenxiahy.hy.data.order.Order;
 import com.wenxiahy.hy.order.dto.OrderDto;
 import com.wenxiahy.hy.order.dto.request.GetOrderRequest;
 import com.wenxiahy.hy.order.service.IOrderService;
@@ -15,7 +16,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
-import java.util.Date;
 
 /**
  * @Author zhouw
@@ -45,7 +45,7 @@ public class OrderController extends BaseController {
         if (dto == null) {
             LOGGER.info("Redis中没有OrderDto，查询数据库，order_no：{}", orderNo);
 
-            Object order = orderService.getOrderByOrderNo(userId, orderNo);
+            Order order = orderService.getOrderByOrderNo(userId, orderNo);
             if (order == null) {
                 LOGGER.info("订单不存在，order_no：{}", orderNo);
                 return noData();
@@ -53,11 +53,11 @@ public class OrderController extends BaseController {
 
             dto = new OrderDto();
             dto.setOrderNo(orderNo);
-            dto.setOrderType(1);
-            dto.setOrderStatus(11);
-            dto.setStoreCode("WH019");
-            dto.setStoreName("武汉街道口019店");
-            dto.setOrderTime(new Date());
+            dto.setOrderType(order.getOrderType());
+            dto.setOrderStatus(order.getOrderStatus());
+            dto.setStoreCode(order.getStoreCode());
+            dto.setStoreName(order.getStoreName());
+            dto.setOrderTime(order.getOrderTime());
 
             boolean redisRst = orderRedisService.set(key, dto);
             if (!redisRst) {

@@ -1,5 +1,6 @@
 package com.wenxiahy.hy.order.service.impl;
 
+import com.wenxiahy.hy.data.order.Order;
 import com.wenxiahy.hy.order.mapper.main.MainMapper;
 import com.wenxiahy.hy.order.mapper.order.OrderMapper;
 import com.wenxiahy.hy.order.service.IOrderService;
@@ -25,9 +26,8 @@ public class OrderServiceImpl implements IOrderService {
     private OrderMapper orderMapper;
 
     @Override
-    public Object getOrderByOrderNo(long userId, long orderNo) {
-        LOGGER.info("getOrderByOrderNo(user_id: {}, order_no: {})", userId, orderNo);
-        return new Object();
+    public Order getOrderByOrderNo(long userId, long orderNo) {
+        return orderMapper.getOne(userId, orderNo);
     }
 
     @Override
